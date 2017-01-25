@@ -1,0 +1,12 @@
+application:
+    container_name: fuel-app
+    build: php
+    ports:
+        - "80:80"
+    volumes:
+        - ./application:/var/www/html
+        - ./php/apache2.conf:/etc/apache2/apache2.conf
+        - ./php/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+        CODEIGNITER_ENV: development
+
